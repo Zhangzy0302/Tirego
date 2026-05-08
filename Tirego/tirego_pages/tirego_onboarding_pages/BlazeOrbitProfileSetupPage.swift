@@ -261,12 +261,12 @@ struct BlazeOrbitProfileSetupPage: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !blazeOrbitNormalizedEmail.isEmpty, !blazeOrbitNormalizedPassword.isEmpty else {
-            blazeOrbitPresentAlert("Registration information is missing. Please sign up again.")
+            blazeOrbitPresentAlert("ac8a089854662b80f16481da253b158382f33474928b96c40083c2d59b9424d1dbb5bb4020d3f2d7cb6997478ee14f2ab45c631e1da4acec727842a0e9fca149".forgeNovaAESDecrypted())
             return
         }
 
         guard !blazeOrbitNormalizedNickname.isEmpty else {
-            blazeOrbitPresentAlert("Please enter your nickname.")
+            blazeOrbitPresentAlert("8ec188fe8bd186835ff7c7ba0157023f5097ab5642ea7295623cee093b4656d3".forgeNovaAESDecrypted())
             return
         }
 
@@ -275,7 +275,7 @@ struct BlazeOrbitProfileSetupPage: View {
         do {
             if try blazeOrbitUserStore.novaPulseFetchUser(byEmail: blazeOrbitNormalizedEmail) != nil {
                 novaPulseFeedbackHub.novaPulseHideLoading()
-                blazeOrbitPresentAlert("This email has already been registered.")
+                blazeOrbitPresentAlert("ab68297ee65143282de11448c9763876ea963caf70d7fae382f25305d77998157c2527eed88073f1a95695c397f6012b".forgeNovaAESDecrypted())
                 return
             }
 

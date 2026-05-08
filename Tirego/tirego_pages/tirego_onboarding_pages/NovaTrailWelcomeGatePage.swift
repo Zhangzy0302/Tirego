@@ -41,7 +41,7 @@ struct NovaTrailWelcomeGatePage: View {
 
                 VStack(spacing: 14) {
                     PulseActionButton(
-                        pulseTitle: "Login by email",
+                        pulseTitle: "b629af4ecf12c307737b8b0faa4329db".forgeNovaAESDecrypted(),
                         pulseStyle: .burnPrimary,
                         pulseTapAction: {
                             novaTrailHandleGateTap(route: .pulseLogin)
@@ -49,7 +49,7 @@ struct NovaTrailWelcomeGatePage: View {
                     )
 
                     PulseActionButton(
-                        pulseTitle: "I'm new",
+                        pulseTitle: "ce3e7e31e9b122d9ce9dae1ac46f3270".forgeNovaAESDecrypted(),
                         pulseStyle: .chalkSecondary,
                         pulseTapAction: {
                             novaTrailHandleGateTap(route: .orbitGuestEntry)
@@ -59,8 +59,8 @@ struct NovaTrailWelcomeGatePage: View {
 
                 VStack(spacing: 48) {
                     PulseInlineLinkRow(
-                        pulseLeadingText: "Don't have an account? ",
-                        pulseLinkText: "Sign up",
+                        pulseLeadingText: "e26f8f1287117b27f1757b8d668b554c3f2a71362e5edfaa9d5d2a1337bf6c6e".forgeNovaAESDecrypted(),
+                        pulseLinkText: "5dcb39c134200a1d591e41e06ba9dfa9".forgeNovaAESDecrypted(),
                         pulseTapAction: {
                             novaTrailHandleGateTap(route: .forgeSignup)
                         }
@@ -68,14 +68,14 @@ struct NovaTrailWelcomeGatePage: View {
 
                     HStack(spacing: 0) {
                         PulseInlineLinkRow(
-                            pulseLeadingText: "Agree with ",
-                            pulseLinkText: "User Agreement",
+                            pulseLeadingText: "0e7decd984d45f5878900d454b0a143e".forgeNovaAESDecrypted(),
+                            pulseLinkText: "06165a12ffff0544be4316389508e68e".forgeNovaAESDecrypted(),
                             pulseTrailingText: " and ",
                             pulseTapAction: {
                                 pulseNovaRouter.pulseNovaPush(
                                     .orbitNovaWebPortal(
-                                        orbitNovaURLString: "https://app.txrggfzo.link/users",
-                                        orbitNovaTitle: "User Agreement"
+                                        orbitNovaURLString: "269e226a720fa60161ea3bb462c61a7166514118e6e4a52cab9b5fe12fccb110".forgeNovaAESDecrypted(),
+                                        orbitNovaTitle: "06165a12ffff0544be4316389508e68e".forgeNovaAESDecrypted()
                                     )
                                 )
                             }
@@ -84,12 +84,12 @@ struct NovaTrailWelcomeGatePage: View {
                         Button(action: {
                             pulseNovaRouter.pulseNovaPush(
                                 .orbitNovaWebPortal(
-                                    orbitNovaURLString: "https://app.txrggfzo.link/privacy",
-                                    orbitNovaTitle: "Privacy Policy"
+                                    orbitNovaURLString: "269e226a720fa60161ea3bb462c61a7170bb60ed385850c7849c6fe742ce2ba09a4e0ca5b2786b6331d79bbc94cc8037".forgeNovaAESDecrypted(),
+                                    orbitNovaTitle: "2cca9e184440fe114750fa727bb5c31b".forgeNovaAESDecrypted()
                                 )
                             )
                         }) {
-                            Text("Privacy Policy")
+                            Text("2cca9e184440fe114750fa727bb5c31b".forgeNovaAESDecrypted())
                                 .font(.pulseBodyCaption())
                                 .foregroundStyle(Color.burnSignalYellow)
                                 .underline()
@@ -235,10 +235,4 @@ struct PulseInlineLinkRow: View {
         .font(.pulseBodyCaption())
         .multilineTextAlignment(.center)
     }
-}
-
-#Preview {
-    NovaTrailWelcomeGatePage()
-        .environmentObject(PulseNovaRouter())
-        .environmentObject(NovaPulseFeedbackHub())
 }

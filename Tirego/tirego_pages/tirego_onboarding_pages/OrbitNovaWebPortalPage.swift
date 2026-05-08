@@ -139,10 +139,3 @@ private final class OrbitNovaWebStageCoordinator: NSObject, WKNavigationDelegate
         orbitNovaIsLoading = false
     }
 }
-
-#Preview {
-    OrbitNovaWebPortalPage(
-        orbitNovaURLString: "https://www.apple.com",
-        orbitNovaTitle: "Web"
-    )
-}

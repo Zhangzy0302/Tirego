@@ -200,9 +200,3 @@ private struct NovaDriftSettingRow: View {
         .buttonStyle(.plain)
     }
 }
-
-#Preview {
-    NovaDriftSettingPage()
-        .environmentObject(PulseNovaRouter())
-        .environmentObject(NovaPulseFeedbackHub())
-}

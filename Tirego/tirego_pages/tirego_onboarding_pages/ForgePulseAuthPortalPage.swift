@@ -181,12 +181,12 @@ struct ForgePulseAuthPortalPage: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !forgePulseNormalizedEmail.isEmpty else {
-            forgePulsePresentAlert("Please enter your email.")
+            forgePulsePresentAlert("8ec188fe8bd186835ff7c7ba0157023f0a3bf8aa52e5e26f8fd948e3ea0f3c04".forgeNovaAESDecrypted())
             return
         }
 
         guard !forgePulseNormalizedPassword.isEmpty else {
-            forgePulsePresentAlert("Please enter your password.")
+            forgePulsePresentAlert("8ec188fe8bd186835ff7c7ba0157023f52173caf71f19bdd95c195e36a392b57".forgeNovaAESDecrypted())
             return
         }
 
@@ -197,23 +197,23 @@ struct ForgePulseAuthPortalPage: View {
                 byEmail: forgePulseNormalizedEmail
             ) else {
                 novaPulseFeedbackHub.novaPulseHideLoading()
-                forgePulsePresentAlert("This email has not been registered.")
+                forgePulsePresentAlert("4febf37749e0df368aeac29893268d49ab791008d304f449f30e93303443c29fc44c53d0a93c700229a9a2e99f77da6d".forgeNovaAESDecrypted())
                 return
             }
 
             guard forgePulseMatchedUser.novaPulsePassword == forgePulseNormalizedPassword else {
                 novaPulseFeedbackHub.novaPulseHideLoading()
-                forgePulsePresentAlert("The password is incorrect.")
+                forgePulsePresentAlert("d602f5652ba3d6e5d38ca62d5d69d9b9ecea1f5748b9584b6ced379cfea86c35".forgeNovaAESDecrypted())
                 return
             }
 
             LiftVaultPersistenceStore.liftVaultSaveLoggedInUserID(forgePulseMatchedUser.id)
             forgePulseHandleSuccessTransition(
-                successMessage: "Login successful."
+                successMessage: "74c460ba3f1b97039bbb46640a38ebb2a7d62aa3d5b46407b9ac859b997c7723".forgeNovaAESDecrypted()
             )
         } catch {
             novaPulseFeedbackHub.novaPulseHideLoading()
-            forgePulsePresentAlert("Unable to complete login right now.")
+            forgePulsePresentAlert("04fb6f1b284aa7273bd635bddc9c1cc9b0d92a8238a6af1e03a281528a511b1f4b34c325f1cef3e3570c02185ecae306".forgeNovaAESDecrypted())
         }
     }
 
@@ -227,23 +227,23 @@ struct ForgePulseAuthPortalPage: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !forgePulseNormalizedEmail.isEmpty else {
-            forgePulsePresentAlert("Please enter your email.")
+            forgePulsePresentAlert("8ec188fe8bd186835ff7c7ba0157023f0a3bf8aa52e5e26f8fd948e3ea0f3c04".forgeNovaAESDecrypted())
             return
         }
 
         guard !forgePulseNormalizedPassword.isEmpty else {
-            forgePulsePresentAlert("Please enter your password.")
+            forgePulsePresentAlert("8ec188fe8bd186835ff7c7ba0157023f52173caf71f19bdd95c195e36a392b57".forgeNovaAESDecrypted())
             return
         }
 
         guard forgePulseNormalizedPassword == forgePulseNormalizedConfirmPassword else {
-            forgePulsePresentAlert("The two passwords do not match.")
+            forgePulsePresentAlert("f697eab7bbdd3841f418cf6839f921191e5a61b102cdc436b6555882a21c8225".forgeNovaAESDecrypted())
             return
         }
 
         do {
             if try forgePulseUserStore.novaPulseFetchUser(byEmail: forgePulseNormalizedEmail) != nil {
-                forgePulsePresentAlert("This email has already been registered.")
+                forgePulsePresentAlert("ab68297ee65143282de11448c9763876ea963caf70d7fae382f25305d77998157c2527eed88073f1a95695c397f6012b".forgeNovaAESDecrypted())
                 return
             }
 
@@ -254,7 +254,7 @@ struct ForgePulseAuthPortalPage: View {
                 )
             )
         } catch {
-            forgePulsePresentAlert("Unable to continue registration right now.")
+            forgePulsePresentAlert("587b95b4b1ce5a8df6feeb425aedef5dfd2b68b48e175f266ae9bf6de1114bcf1efcf552218dcb22f7acb4e496b98fcf".forgeNovaAESDecrypted())
         }
     }
 
@@ -279,22 +279,4 @@ struct ForgePulseAuthPortalPage: View {
             pulseNovaRouter.pulseNovaPresent(.novaTrailTabShell)
         }
     }
-}
-
-#Preview("Sign In") {
-    ForgePulseAuthPortalPage(forgePulseMode: .signIn)
-        .environmentObject(PulseNovaRouter())
-        .environmentObject(NovaPulseFeedbackHub())
-}
-
-#Preview("Sign Up") {
-    ForgePulseAuthPortalPage(forgePulseMode: .signUp)
-        .environmentObject(PulseNovaRouter())
-        .environmentObject(NovaPulseFeedbackHub())
-}
-
-#Preview("Forgot Password") {
-    ForgePulseAuthPortalPage(forgePulseMode: .forgotPassword)
-        .environmentObject(PulseNovaRouter())
-        .environmentObject(NovaPulseFeedbackHub())
 }

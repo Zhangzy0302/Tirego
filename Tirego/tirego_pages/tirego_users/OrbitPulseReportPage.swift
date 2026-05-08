@@ -6,19 +6,19 @@ struct OrbitPulseReportPage: View {
 
     private let orbitPulseReasonOptions: [OrbitPulseReasonOption] = [
         .init(
-            orbitPulseTitle: "Harassment",
+            orbitPulseTitle: "05996d8a58a9c0dd0e16cd150f96dc16".forgeNovaAESDecrypted(),
             orbitPulseIsMultiline: false
         ),
         .init(
-            orbitPulseTitle: "Inappropriate language",
+            orbitPulseTitle: "639508aad9a20fac66b46f350bea2423db7cd518381c55c6fdb3c19a2fa4ef77".forgeNovaAESDecrypted(),
             orbitPulseIsMultiline: false
         ),
         .init(
-            orbitPulseTitle: "Spam or false information",
+            orbitPulseTitle: "c3d8f9106935ff41ec17aa47b215a6713e1fc583ec39f646df96f5a862b9184e".forgeNovaAESDecrypted(),
             orbitPulseIsMultiline: false
         ),
         .init(
-            orbitPulseTitle: "Other (please specify in the description box below).",
+            orbitPulseTitle: "17b1f2acd8f8682ba42e193b1eaa7337f50ddec2e8a4faabb297a0e19a49335a79d40d1300cd5a1000a2ce6bb0a90608957944e7b487d94b5c6bb6689abdc457".forgeNovaAESDecrypted(),
             orbitPulseIsMultiline: true
         )
     ]
@@ -108,7 +108,7 @@ struct OrbitPulseReportPage: View {
                 .fill(Color.chalkPureWhite)
 
             if orbitPulseReasonText.isEmpty {
-                Text("Enter your reason here...")
+                Text("f65ced81f11d572c5772428ce68d5585f3eb210437717cd1c0ab6e7dc5ec6f6a".forgeNovaAESDecrypted())
                     .font(.pulsePlaceholderText(size: 14))
                     .foregroundStyle(Color.repPlaceholderGray)
                     .padding(.horizontal, 20)
@@ -143,7 +143,7 @@ struct OrbitPulseReportPage: View {
     private func orbitPulseSubmitReport() {
         guard let orbitPulseSelectedReasonOption else {
             novaPulseFeedbackHub.novaPulseShowToast(
-                "Please select a report reason.",
+                "8ef127d60934af904b5213e95f5ebfde6d85e8833d92f197fb6cbce15eb0b05e".forgeNovaAESDecrypted(),
                 style: .error
             )
             return
@@ -152,14 +152,14 @@ struct OrbitPulseReportPage: View {
         if orbitPulseSelectedReasonOption.orbitPulseIsMultiline,
            orbitPulseTrimmedReasonText.isEmpty {
             novaPulseFeedbackHub.novaPulseShowToast(
-                "Please enter your report details.",
+                "8ec188fe8bd186835ff7c7ba0157023faa2fae9d947b5c4884f39bcfc5e399d690e1f07dca141af7ef9ea0c8d735093d".forgeNovaAESDecrypted(),
                 style: .error
             )
             return
         }
 
         novaPulseFeedbackHub.novaPulseShowToast(
-            "Report submitted successfully.",
+            "3d8e6700dc8600e132967f8122c08359b5e1ec0443e8c75df5ff93e63bb75250".forgeNovaAESDecrypted(),
             style: .success
         )
         orbitPulseDismiss()
@@ -172,7 +172,3 @@ private struct OrbitPulseReasonOption: Identifiable {
     let orbitPulseIsMultiline: Bool
 }
 
-#Preview {
-    OrbitPulseReportPage()
-        .environmentObject(NovaPulseFeedbackHub())
-}
