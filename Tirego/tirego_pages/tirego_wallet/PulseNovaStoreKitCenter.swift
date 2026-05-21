@@ -70,7 +70,7 @@ final class PulseNovaStoreKitCenter: NSObject, ObservableObject {
         .init(
             id: "rptlvsxqmejndkaf",
             pulseNovaCoins: 7700,
-            pulseNovaFallbackPriceText: "$13.99"
+            pulseNovaFallbackPriceText: "$14.99"
         ),
         .init(
             id: "shnovlsbsbwhwrqz",
