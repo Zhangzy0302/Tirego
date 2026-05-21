@@ -137,7 +137,7 @@ platform :ios do
     update_code_signing_settings(
       path: "Tirego.xcodeproj",
       use_automatic_signing: false,
-      team_id: "WLLMWYMP66",
+      team_id: "HS6B4FMA65",
       targets: ["Tirego"],
       code_sign_identity: "Apple Distribution",
       profile_name: "match AppStore com.tireaoxbpabra.Tirego",
